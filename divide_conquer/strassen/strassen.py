@@ -97,4 +97,5 @@ B = np.array([[1, 0, 0, 2],
               [0, 5, 6, 1]])
 
 C = strassen(A, B)
+
 print(C)
