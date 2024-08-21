@@ -1,7 +1,7 @@
 import numpy as np
 from typing import Dict, Tuple
 
-# Diccionario global para almacenar submatrices
+
 submatrix: Dict[str, np.ndarray] = {}
 
 
@@ -85,17 +85,4 @@ def strassen(A: np.ndarray, B: np.ndarray) -> np.ndarray:
     return C
 
 
-# Matrices de ejemplo
-A = np.array([[2, 4, 1, 3],
-              [0, 1, 2, 5],
-              [7, 8, 9, 0],
-              [4, 3, 2, 1]])
 
-B = np.array([[1, 0, 0, 2],
-              [0, 1, 2, 3],
-              [4, 0, 1, 0],
-              [0, 5, 6, 1]])
-
-C = strassen(A, B)
-
-print(C)
