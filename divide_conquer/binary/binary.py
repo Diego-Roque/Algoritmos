@@ -79,20 +79,10 @@ def binary_multiply(A: np.ndarray, B: np.ndarray) -> Union[np.ndarray, bool]:
             for j in range(num_cols):
                 for k in range(num_cols):
                     zeromatrix[i, j] |= A[i, k] & B[k, j]
-
+        print(zeromatrix)
         return zeromatrix
     else:
         return False
 
 
-# Ejemplo de uso
-A = np.array([[1, 0, 1],
-              [0, 1, 0],
-              [1, 1, 0]])
 
-B = np.array([[0, 1, 1],
-              [1, 0, 0],
-              [0, 0, 1]])
-
-C = binary_multiply(A, B)
-print(C)
