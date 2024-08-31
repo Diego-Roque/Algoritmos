@@ -2,6 +2,8 @@ import pytest
 from tabulation_wedding import wedding_tabulation  # Cambia 'tabulation_wedding' por el nombre correcto del archivo que contiene tu función.
 
 
+
+
 def test_exact_budget():
     assert wedding_tabulation(100, 3, [[20, 30], [50, 60], [10, 30]]) == 0
 
@@ -18,9 +20,9 @@ def test_minimal_budget():
 def test_edge_case_large_numbers():
     assert wedding_tabulation(1000, 5, [[200, 400, 600], [200, 400, 600], [200, 400, 600], [200, 400, 600], [200, 400, 600]]) == 0
 
+
 def test_non_positive_budget():
     assert wedding_tabulation(0, 2, [[20, 30], [50, 60]]) == -1
 
 if __name__ == "__main__":
     pytest.main()
-
