@@ -16,6 +16,19 @@ def test_square_matrices():
     result = binary_multiply(A, B)
     np.testing.assert_array_equal(result, expected_result)
 
+def test_two():
+    A = np.array([[1, 0],
+                [0, 1]])
+
+    B = np.array([[1, 0],
+                [0, 1]])
+
+    expected_result = (np.dot(A, B) > 0).astype(int)
+
+    result = binary_multiply(A, B)
+    np.testing.assert_array_equal(result, expected_result)
+
+
 def test_larger_square_matrices():
     A = np.array([[1, 0, 1, 0],
                   [0, 1, 0, 1],
