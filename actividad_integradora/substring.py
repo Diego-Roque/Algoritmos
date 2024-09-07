@@ -16,7 +16,7 @@ def read_file(file_path: str) -> str:
 
 
 class SubstringFinder:
-    def __init__(self, s1: str = "transmission1.txt", s2: str = "transmission2.txt"):
+    def __init__(self, s1: str = "files/transmission1.txt", s2: str = "files/transmission2.txt"):
         """
         Inicializa el contenido de los dos archivos de transmisión para buscar la subcadena común más larga.
 

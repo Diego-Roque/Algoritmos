@@ -21,21 +21,25 @@ class Manacher:
         Encuentra la subcadena palíndroma más larga utilizando el algoritmo de Manacher.
 
         Args:
-            transmission (str): El contenido de la transmisión que será procesada.
+            transmission (str): Nombre del archivo que contiene la transmisión que será procesada.
 
         Returns:
             str: El rango de índices donde se encuentra el palíndromo más largo en la transmisión original.
                  El formato es: 'inicio fin'.
         """
+
+        # Leer el contenido del archivo de transmisión
+        self.transmission: str = transmission
+
         # Inicializar una lista para almacenar la longitud del palíndromo más largo centrado en cada posición
-        palindrome: List[int] = [0] * len(transmission)
+        palindrome: List[int] = [0] * len(self.transmission)
 
         # Variables para mantener el centro y el borde derecho del palíndromo actual
         center: int = 0
         right: int = 0
 
         # Iterar sobre cada carácter en la transmisión
-        for idx in range(len(transmission)):
+        for idx in range(len(self.transmission)):
             mirror: int = 2 * center - idx  # Índice espejo de la posición actual
 
             # Verificar si la posición actual está dentro del alcance del palíndromo conocido
@@ -43,8 +47,8 @@ class Manacher:
                 palindrome[idx] = min(right - idx, palindrome[mirror])
 
             # Intentar expandir el palíndromo actual
-            while (idx + palindrome[idx] + 1 < len(transmission)) and (idx - palindrome[idx] - 1 >= 0) and (
-                    transmission[idx + palindrome[idx] + 1] == transmission[idx - palindrome[idx] - 1]):
+            while (idx + palindrome[idx] + 1 < len(self.transmission)) and (idx - palindrome[idx] - 1 >= 0) and (
+                    self.transmission[idx + palindrome[idx] + 1] == self.transmission[idx - palindrome[idx] - 1]):
                 palindrome[idx] += 1
 
             # Actualizar las variables de centro y borde derecho si el palíndromo actual es más largo
@@ -65,8 +69,8 @@ class Manacher:
 
 if __name__ == "__main__":
     # Leer el contenido de los dos archivos de transmisión
-    transmission1: str = read_file('transmission1.txt')
-    transmission2: str = read_file('transmission2.txt')
+    transmission1: str = read_file('files/transmission1.txt')
+    transmission2: str = read_file('files/transmission2.txt')
 
     # Crear una instancia del solver de Manacher
     manacher_solver = Manacher()

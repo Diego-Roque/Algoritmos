@@ -82,8 +82,8 @@ def two_pointers(transmission: str, pattern: str) -> bool:
 
 if __name__ == "__main__":
     # Leer el archivo de transmisión y el archivo de patrón
-    transmission: str = read_file('transmission1.txt')
-    pattern: str = read_file('mcode1.txt')
+    transmission: str = read_file('files/transmission1.txt')
+    pattern: str = read_file('files/mcode1.txt')
 
     # Verificar si el patrón está contenido en la transmisión
     result: bool = two_pointers(transmission, pattern)
